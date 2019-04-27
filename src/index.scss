@@ -1,0 +1,88 @@
+
+@font-face {
+  font-family: "SF-PRO-REGULAR";
+  font-style: normal;
+  font-weight: 400;
+  //src: url(/assets/fonts/sf-pro-regular.woff2) format('woff2'), url(/assets/fonts/sf-pro-regular.woff) format('woff')
+  src: url(/assets/fonts/SFProDisplay-Regular.woff2) format('woff2'), url(/assets/fonts/SFProDisplay-Regular.woff) format('woff')
+
+}
+
+@font-face {
+  font-family: "SF-PRO-BOLD";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/SFProDisplay-Bold.woff2) format('woff2'), url(/assets/fonts/SFProDisplay-Bold.woff) format('woff')
+}
+
+@font-face {
+  font-family: "SF-PRO-LIGHT";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/SFProDisplay-Light.woff2) format('woff2'), url(/assets/fonts/SFProDisplay-Light.woff) format('woff')
+}
+
+body {
+  //font-family: 'Source Sans Pro',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //  sans-serif;
+  font-family: SF-PRO-REGULAR, -apple-system, system-ui, BlinkMacSystemFont, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  //background: #F9F9FB;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  color: #3d3d3d;
+
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.animated-background {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%);
+  background-size: 200% 104px;
+  display: none;
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% - var(--spacing) * 2);
+
+  &[data-show="true"] {
+    display: block;
+  }
+}
+
+img[src=''], img:not([src]) {
+  opacity: 0;
+}
+
